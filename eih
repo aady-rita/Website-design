@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        header input {
+            padding: 10px;
+            margin-top: 10px;
+            width: 80%;
+            max-width: 300px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        #recipes {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .recipeItem {
+            cursor: pointer;
+            background-color: #ecf0f1;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .recipeItem:hover {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .recipeImage {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+        }
+
+        #recipeDetails {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #recipeImageDetails {
+            max-width: 300px;
+            max-height: 300px;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .citation {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <h1>Recipe Corner</h1>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="citations.html">Citations</a>
+    </nav>
+    <input type="text" id="searchBar" onkeyup="searchRecipes()" placeholder="Search Recipes...">
+</header>
+
+<!-- Home Page Content (Recipes List) -->
+<section id="recipeList">
+    <h2>Popular Recipes</h2>
+    <ul id="recipes">
+        <li class="recipeItem" onclick="showRecipe('recipe1')">
+            <img src="https://images.unsplash.com/photo-1595391713150-6fbb5f6ad9d9?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAwMHwwfDF8c2VhY2h8MTF8fGJvbG9nbmVzZXxlbnwwfHx8fDE2MTkzNzQyNTQ&ixlib=rb-1.2.1&q=80&w=400" alt="Spaghetti Bolognese" class="recipeImage">
+            <span>Spaghetti Bolognese</span>
+        </li>
+        <li class="recipeItem" onclick="showRecipe('recipe2')">
+            <img src="https://images.unsplash.com/photo-1602774698224-5b477ab4a504?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAwMHwwfDF8c2VhY2h8OXx8Y2hpY2tlbiB0YWNvc3xlbnwwfHx8fDE2MTkzNzQxNjg&ixlib=rb-1.2.1&q=80&w=400" alt="Chicken Tacos" class="recipeImage">
+            <span>Chicken Tacos</span>
+        </li>
+        <li class="recipeItem" onclick="showRecipe('recipe3')">
+            <img src="https://images.unsplash.com/photo-1603472081634-bc0b15a6b254?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAwMHwwfDF8c2VhY2h8Mnx8dmVnZXRhcmlhbiBzYWxhZHN8ZW58MHx8fHwxNjE5Mzc0MDE0&ixlib=rb-1.2.1&q=80&w=400" alt="Vegetarian Salad" class="recipeImage">
+            <span>Vegetarian Salad</span>
+        </li>
+        <li class="recipeItem" onclick="showRecipe('recipe4')">
+            <img src="https://images.unsplash.com/photo-1605202551527-d35d37a8c7e4?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAwMHwwfDF8c2VhY2h8M3x8cGFuY2FrZXN8ZW58MHx8fHwxNjE5Mzc1OTAw&ixlib=rb-1.2.1&q=80&w=400" alt="Pancakes" class="recipeImage">
+            <span>Pancakes</span>
+        </li>
+        <li class="recipeItem" onclick="showRecipe('recipe5')">
+            <img src="https://images.unsplash.com/photo-1566808749-6bc1ec72d411?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAwMHwwfDF8c2VhY2h8N3x8Y2hvb2xhdGUlMjBjaGlwIGNvb2tpZXxlbnwwfHx8fDE2MTkzNzQwNzg&ixlib=rb-1.2.1&q=80&w=400" alt="Chocolate Chip Cookies" class="recipeImage">
+            <span>Chocolate Chip Cookies</span>
+        </li>
+        <li class="recipeItem" onclick="showRecipe('recipe6')">
+            <img src="https://images.unsplash.com/photo-1589909948837-c0e7e23d567d?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAwMHwwfDF8c2VhY2h8Mnx8Y2hhbGxlbmdnZ3JhdmllcyxlbnwwfHx8fDE2MTkzNzU0NzM&ixlib=rb-1.2.1&q=80&w=400" alt="Egg Salad" class="recipeImage">
+            <span>Egg Salad</span>
+        </li>
+    </ul>
+</section>
+
+<!-- Recipe Details Section -->
+<div id="recipeDetails">
+    <img id="recipeImageDetails" src="" alt="Recipe Image" class="recipeImage">
+    <p id="recipeText"></p>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Recipe Corner. All Rights Reserved.</p>
+</footer>
+
+<script>
+    function searchRecipes() {
+        let input = document.getElementById('searchBar').value.toLowerCase();
+        let recipes = document.querySelectorAll('.recipeItem');
+
+        recipes.forEach(function(recipe) {
+            let recipeName = recipe.textContent.toLowerCase();
+            if (recipeName.indexOf(input) > -1) {
+                recipe.style.display = "";
+            } else {
+                recipe.style.display = "none";
+            }
+        });
+    }
+
+    function showRecipe(recipeId) {
+        let recipeText = document.getElementById('recipeText');
+        let recipeDetails = document.getElementById('recipeDetails');
+        let recipeImage = document.getElementById('recipeImageDetails');
+
+        switch(recipeId) {
+            case 'recipe1':
+                recipeText.textContent = 'Spaghetti Bolognese: A classic Italian pasta dish with a rich, meaty sauce.';
+                recipeImage.src = 'https://images.unsplash.com/photo-1595391713150-6fbb5f6ad9d9?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAwMHwwfDF8c2VhY2h8MTF8fGJvbG9nbmVzZXxlbnwwfHx8fDE2MTkzNzQyNTQ&ixlib=rb-1.2.1&q=80&w=400';
+                break;
+            case 'recipe2':
+                recipeText.textContent = 'Chicken Tacos: Soft tortillas filled with seasoned grilled chicken, veggies, and toppings.';
+                recipeImage.src = 'https://images.unsplash.com/photo-1602774698224-5b477ab4a504?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAwMHwwfDF8c2VhY2h8OXx8Y2hpY2tlbiB0YWNvc3xlbnwwfHx8fDE2MTkzNzQxNjg&ixlib=rb-1.2.1&q=80&w=400';
+                break;
+            case 'recipe3':
+                recipeText.textContent = 'Vegetarian Salad: A mix of fresh vegetables and a light dressing.';
+                recipeImage.src = 'https://images.unsplash.com/photo-1603472081634-bc0b15a6b254?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAwMHwwfDF8c2VhY2h8Mnx8dmVnZXRhcmlhbiBzYWxhZHN8ZW58MHx8fHwxNjE5Mzc0MDE0&ixlib=rb-1.2.1&q=80&w=400';
+                break;
+            case 'recipe4':
+                recipeText.textContent = 'Pancakes: Fluffy breakfast pancakes with maple syrup and butter.';
+                recipeImage.src = 'https://images.unsplash.com/photo-1605202551527-d35d37a8c7e4?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAwMHwwfDF8c2VhY2h8M3x8cGFuY2FrZXN8ZW58MHx8fHwxNjE5Mzc1OTAw&ixlib=rb-1.2.1&q=80&w=400';
+                break;
+            case 'recipe5':
+                recipeText.textContent = 'Chocolate Chip Cookies: Delicious cookies with gooey chocolate chips.';
+                recipeImage.src = 'https://images.unsplash.com/photo-1566808749-6bc1ec72d411?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAwMHwwfDF8c2VhY2h8N3x8Y2hvb2xhdGUlMjBjaGlwIGNvb2tpZXxlbnwwfHx8fDE2MTkzNzQwNzg&ixlib=rb-1.2.1&q=80&w=400';
+                break;
+            case 'recipe6':
+                recipeText.textContent = 'Egg Salad: A refreshing salad made with boiled eggs, mayonnaise, and veggies.';
+                recipeImage.src = 'https://images.unsplash.com/photo-1589909948837-c0e7e23d567d?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAwMHwwfDF8c2VhY2h8Mnx8Y2hhbGxlbmdnZ3JhdmllcyxlbnwwfHx8fDE2MTkzNzU0NzM&ixlib=rb-1.2.1&q=80&w=400';
+                break;
+        }
+
+        recipeDetails.style.display = 'block';
+    }
+</script>
+
+<!-- Citations Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .citation {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Recipe Corner - Citations</h1>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="citations.html">Citations</a>
+    </nav>
+</header>
+
+<section>
+    <h2>Sources</h2>
+    <p>All
