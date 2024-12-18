@@ -138,7 +138,7 @@
 
 <!-- Footer -->
 <footer>
-    <p>&copy; 2024 Recipe Corner. All Rights Reserved.</p>
+    <p>Recipe Corner. All Rights Reserved.</p>
 </footer>
 
 <script>
@@ -196,89 +196,6 @@
         recipeDetails.style.display = 'block';
     }
 </script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Citations</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #3498db;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        footer {
-            text-align: center;
-            background-color: #2c3e50;
-            color: white;
-            padding: 10px;
-            position: absolute;
-            width: 100%;
-            bottom: 0;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        section {
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        .citation {
-            background-color: #ecf0f1;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-        }
-    </style>
-</head>
-<body>
-
-<!-- Header -->
-<header>
-    <h1>Citations</h1>
-    <nav>
-        <a href="index.html" style="color: white;">Home</a>
-    </nav>
-</header>
-
-<!-- Citations Content -->
-<section>
-    <h2>References</h2>
-    <div class="citation">
-        <p>Unsplash. "Spaghetti Bolognese." Unsplash, <a href="https://unsplash.com" target="_blank">unsplash.com</a>.</p>
-    </div>
-    <div class="citation">
-        <p>Unsplash. "Chicken Tacos." Unsplash, <a href="https://unsplash.com" target="_blank">unsplash.com</a>.</p>
-    </div>
-    <div class="citation">
-        <p>Unsplash. "Vegetarian Salad." Unsplash, <a href="https://unsplash.com" target="_blank">unsplash.com</a>.</p>
-    </div>
-    <div class="citation">
-        <p>Unsplash. "Pancakes." Unsplash, <a href="https://unsplash.com" target="_blank">unsplash.com</a>.</p>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer>
-    <p>&copy; 2024 Recipe Corner. All Rights Reserved.</p>
-</footer>
 
 </body>
 </html>
