@@ -123,14 +123,6 @@
             <img src="https://images.unsplash.com/photo-1605202551527-d35d37a8c7e4?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAwMHwwfDF8c2VhY2h8M3x8cGFuY2FrZXN8ZW58MHx8fHwxNjE5Mzc1OTAw&ixlib=rb-1.2.1&q=80&w=400" alt="Pancakes" class="recipeImage">
             <span>Pancakes</span>
         </li>
-        <li class="recipeItem" onclick="showRecipe('recipe5')">
-            <img src="https://images.unsplash.com/photo-1566808749-6bc1ec72d411?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAwMHwwfDF8c2VhY2h8N3x8Y2hvb2xhdGUlMjBjaGlwIGNvb2tpZXxlbnwwfHx8fDE2MTkzNzQwNzg&ixlib=rb-1.2.1&q=80&w=400" alt="Chocolate Chip Cookies" class="recipeImage">
-            <span>Chocolate Chip Cookies</span>
-        </li>
-        <li class="recipeItem" onclick="showRecipe('recipe6')">
-            <img src="https://images.unsplash.com/photo-1589909948837-c0e7e23d567d?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAwMHwwfDF8c2VhY2h8Mnx8Y2hhbGxlbmdnZ3JhdmllcyxlbnwwfHx8fDE2MTkzNzU0NzM&ixlib=rb-1.2.1&q=80&w=400" alt="Egg Salad" class="recipeImage">
-            <span>Egg Salad</span>
-        </li>
     </ul>
 </section>
 
@@ -200,22 +192,19 @@
                 recipeIngredients.innerHTML = '<li>1 Cup Flour</li><li>1 Egg</li><li>1 Cup Milk</li><li>1 tbsp Sugar</li><li>1 tsp Baking Powder</li>';
                 recipeInstructions.textContent = 'Mix the dry ingredients in one bowl and the wet ingredients in another. Combine both and cook on a hot griddle. Serve with syrup and butter.';
                 break;
-            case 'recipe5':
-                recipeTitle.textContent = 'Chocolate Chip Cookies';
-                recipeImage.src = 'https://images.unsplash.com/photo-1566808749-6bc1ec72d411?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjAwMHwwfDF8c2VhY2h8N3x8Y2hvb2xhdGUlMjBjaGlwIGNvb2tpZXxlbnwwfHx8fDE2MTkzNzQwNzg&ixlib=rb-1.2.1&q=80&w=400';
-                recipeIngredients.innerHTML = '<li>1 Cup Butter</li><li>1 Cup Sugar</li><li>2 Cups Flour</li><li>1 Cup Chocolate Chips</li>';
-                recipeInstructions.textContent = 'Cream the butter and sugar together, then add flour and chocolate chips. Bake at 350°F for 10 minutes.';
-                break;
-            case 'recipe6':
-                recipeTitle.textContent = 'Egg Salad';
-                recipeImage.src = '
+        }
+        recipeDetails.style.display = 'block';
+    }
+</script>
 
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Citations - Recipe Website</title>
+    <title>Citations</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -232,16 +221,6 @@
             text-align: center;
         }
 
-        header nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-
-        section {
-            padding: 20px;
-        }
-
         footer {
             text-align: center;
             background-color: #2c3e50;
@@ -256,13 +235,16 @@
             margin: 0;
         }
 
-        .citationList {
-            list-style-type: none;
-            padding: 0;
+        section {
+            padding: 20px;
+            margin-top: 20px;
         }
 
-        .citationList li {
+        .citation {
+            background-color: #ecf0f1;
+            padding: 10px;
             margin: 10px 0;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -272,22 +254,25 @@
 <header>
     <h1>Citations</h1>
     <nav>
-        <a href="index.html">Home</a> |
-        <a href="citations.html">Citations</a>
+        <a href="index.html" style="color: white;">Home</a>
     </nav>
 </header>
 
-<!-- Citations Page Content -->
+<!-- Citations Content -->
 <section>
-    <h2>Sources Used</h2>
-    <ul class="citationList">
-        <li>Spaghetti Bolognese image: Unsplash, Photographer: <a href="https://unsplash.com/photos/6fbb5f6ad9d9">Photo</a></li>
-        <li>Chicken Tacos image: Unsplash, Photographer: <a href="https://unsplash.com/photos/5b477ab4a504">Photo</a></li>
-        <li>Vegetarian Salad image: Unsplash, Photographer: <a href="https://unsplash.com/photos/bc0b15a6b254">Photo</a></li>
-        <li>Pancakes image: Unsplash, Photographer: <a href="https://unsplash.com/photos/d35d37a8c7e4">Photo</a></li>
-        <li>Chocolate Chip Cookies image: Unsplash, Photographer: <a href="https://unsplash.com/photos/6bc1ec72d411">Photo</a></li>
-        <li>Egg Salad image: Unsplash, Photographer: <a href="https://unsplash.com/photos/c0e7e23d567d">Photo</a></li>
-    </ul>
+    <h2>References</h2>
+    <div class="citation">
+        <p>Unsplash. "Spaghetti Bolognese." Unsplash, <a href="https://unsplash.com" target="_blank">unsplash.com</a>.</p>
+    </div>
+    <div class="citation">
+        <p>Unsplash. "Chicken Tacos." Unsplash, <a href="https://unsplash.com" target="_blank">unsplash.com</a>.</p>
+    </div>
+    <div class="citation">
+        <p>Unsplash. "Vegetarian Salad." Unsplash, <a href="https://unsplash.com" target="_blank">unsplash.com</a>.</p>
+    </div>
+    <div class="citation">
+        <p>Unsplash. "Pancakes." Unsplash, <a href="https://unsplash.com" target="_blank">unsplash.com</a>.</p>
+    </div>
 </section>
 
 <!-- Footer -->
@@ -297,3 +282,4 @@
 
 </body>
 </html>
+
